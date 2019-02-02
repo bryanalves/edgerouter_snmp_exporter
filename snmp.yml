@@ -8,7 +8,6 @@ ubiquiti_edgemax:
   - 1.3.6.1.2.1.5
   - 1.3.6.1.4.1.2021.10
   - 1.3.6.1.4.1.2021.11
-  - 1.3.6.1.4.1.2021.13.15
   - 1.3.6.1.4.1.2021.4
   get:
   - 1.3.6.1.2.1.25.1.1.0
@@ -2062,60 +2061,108 @@ ubiquiti_edgemax:
     type: gauge
     help: reference index/row number for each observed loadave. - 1.3.6.1.4.1.2021.10.1.1
     indexes:
-    - labelname: laIndex
+    - labelname: laNames
       type: gauge
+    lookups:
+    - labels:
+      - laNames
+      labelname: laNames
+      oid: 1.3.6.1.4.1.2021.10.1.2
+      type: DisplayString
   - name: laNames
     oid: 1.3.6.1.4.1.2021.10.1.2
     type: DisplayString
     help: The list of loadave names we're watching. - 1.3.6.1.4.1.2021.10.1.2
     indexes:
-    - labelname: laIndex
+    - labelname: laNames
       type: gauge
+    lookups:
+    - labels:
+      - laNames
+      labelname: laNames
+      oid: 1.3.6.1.4.1.2021.10.1.2
+      type: DisplayString
   - name: laLoad
     oid: 1.3.6.1.4.1.2021.10.1.3
     type: DisplayString
     help: The 1,5 and 15 minute load averages (one per row). - 1.3.6.1.4.1.2021.10.1.3
     indexes:
-    - labelname: laIndex
+    - labelname: laNames
       type: gauge
+    lookups:
+    - labels:
+      - laNames
+      labelname: laNames
+      oid: 1.3.6.1.4.1.2021.10.1.2
+      type: DisplayString
   - name: laConfig
     oid: 1.3.6.1.4.1.2021.10.1.4
     type: DisplayString
     help: The watch point for load-averages to signal an error - 1.3.6.1.4.1.2021.10.1.4
     indexes:
-    - labelname: laIndex
+    - labelname: laNames
       type: gauge
+    lookups:
+    - labels:
+      - laNames
+      labelname: laNames
+      oid: 1.3.6.1.4.1.2021.10.1.2
+      type: DisplayString
   - name: laLoadInt
     oid: 1.3.6.1.4.1.2021.10.1.5
     type: gauge
     help: The 1,5 and 15 minute load averages as an integer - 1.3.6.1.4.1.2021.10.1.5
     indexes:
-    - labelname: laIndex
+    - labelname: laNames
       type: gauge
+    lookups:
+    - labels:
+      - laNames
+      labelname: laNames
+      oid: 1.3.6.1.4.1.2021.10.1.2
+      type: DisplayString
   - name: laLoadFloat
     oid: 1.3.6.1.4.1.2021.10.1.6
     type: Float
     help: The 1,5 and 15 minute load averages as an opaquely wrapped floating point
       number. - 1.3.6.1.4.1.2021.10.1.6
     indexes:
-    - labelname: laIndex
+    - labelname: laNames
       type: gauge
+    lookups:
+    - labels:
+      - laNames
+      labelname: laNames
+      oid: 1.3.6.1.4.1.2021.10.1.2
+      type: DisplayString
   - name: laErrorFlag
     oid: 1.3.6.1.4.1.2021.10.1.100
     type: gauge
     help: A Error flag to indicate the load-average has crossed its threshold value
       defined in the snmpd.conf file - 1.3.6.1.4.1.2021.10.1.100
     indexes:
-    - labelname: laIndex
+    - labelname: laNames
       type: gauge
+    lookups:
+    - labels:
+      - laNames
+      labelname: laNames
+      oid: 1.3.6.1.4.1.2021.10.1.2
+      type: DisplayString
   - name: laErrMessage
     oid: 1.3.6.1.4.1.2021.10.1.101
     type: DisplayString
     help: An error message describing the load-average and its surpased watch-point
       value. - 1.3.6.1.4.1.2021.10.1.101
     indexes:
-    - labelname: laIndex
+    - labelname: laNames
       type: gauge
+    lookups:
+    - labels:
+      - laNames
+      labelname: laNames
+      oid: 1.3.6.1.4.1.2021.10.1.2
+      type: DisplayString
   - name: ssIndex
     oid: 1.3.6.1.4.1.2021.11.1
     type: gauge
@@ -2251,83 +2298,6 @@ ubiquiti_edgemax:
     oid: 1.3.6.1.4.1.2021.11.67
     type: gauge
     help: The number of processors, as counted by the agent - 1.3.6.1.4.1.2021.11.67
-  - name: diskIOIndex
-    oid: 1.3.6.1.4.1.2021.13.15.1.1.1
-    type: gauge
-    help: Reference index for each observed device. - 1.3.6.1.4.1.2021.13.15.1.1.1
-    indexes:
-    - labelname: diskIOIndex
-      type: gauge
-  - name: diskIODevice
-    oid: 1.3.6.1.4.1.2021.13.15.1.1.2
-    type: DisplayString
-    help: The name of the device we are counting/checking. - 1.3.6.1.4.1.2021.13.15.1.1.2
-    indexes:
-    - labelname: diskIOIndex
-      type: gauge
-  - name: diskIONRead
-    oid: 1.3.6.1.4.1.2021.13.15.1.1.3
-    type: counter
-    help: The number of bytes read from this device since boot. - 1.3.6.1.4.1.2021.13.15.1.1.3
-    indexes:
-    - labelname: diskIOIndex
-      type: gauge
-  - name: diskIONWritten
-    oid: 1.3.6.1.4.1.2021.13.15.1.1.4
-    type: counter
-    help: The number of bytes written to this device since boot. - 1.3.6.1.4.1.2021.13.15.1.1.4
-    indexes:
-    - labelname: diskIOIndex
-      type: gauge
-  - name: diskIOReads
-    oid: 1.3.6.1.4.1.2021.13.15.1.1.5
-    type: counter
-    help: The number of read accesses from this device since boot. - 1.3.6.1.4.1.2021.13.15.1.1.5
-    indexes:
-    - labelname: diskIOIndex
-      type: gauge
-  - name: diskIOWrites
-    oid: 1.3.6.1.4.1.2021.13.15.1.1.6
-    type: counter
-    help: The number of write accesses to this device since boot. - 1.3.6.1.4.1.2021.13.15.1.1.6
-    indexes:
-    - labelname: diskIOIndex
-      type: gauge
-  - name: diskIOLA1
-    oid: 1.3.6.1.4.1.2021.13.15.1.1.9
-    type: gauge
-    help: The 1 minute average load of disk (%) - 1.3.6.1.4.1.2021.13.15.1.1.9
-    indexes:
-    - labelname: diskIOIndex
-      type: gauge
-  - name: diskIOLA5
-    oid: 1.3.6.1.4.1.2021.13.15.1.1.10
-    type: gauge
-    help: The 5 minute average load of disk (%) - 1.3.6.1.4.1.2021.13.15.1.1.10
-    indexes:
-    - labelname: diskIOIndex
-      type: gauge
-  - name: diskIOLA15
-    oid: 1.3.6.1.4.1.2021.13.15.1.1.11
-    type: gauge
-    help: The 15 minute average load of disk (%) - 1.3.6.1.4.1.2021.13.15.1.1.11
-    indexes:
-    - labelname: diskIOIndex
-      type: gauge
-  - name: diskIONReadX
-    oid: 1.3.6.1.4.1.2021.13.15.1.1.12
-    type: counter
-    help: The number of bytes read from this device since boot. - 1.3.6.1.4.1.2021.13.15.1.1.12
-    indexes:
-    - labelname: diskIOIndex
-      type: gauge
-  - name: diskIONWrittenX
-    oid: 1.3.6.1.4.1.2021.13.15.1.1.13
-    type: counter
-    help: The number of bytes written to this device since boot. - 1.3.6.1.4.1.2021.13.15.1.1.13
-    indexes:
-    - labelname: diskIOIndex
-      type: gauge
   - name: memIndex
     oid: 1.3.6.1.4.1.2021.4.1
     type: gauge
