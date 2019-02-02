@@ -1,0 +1,49 @@
+modules:
+  ubiquiti_edgemax:
+    walk:
+      - hrSystemUptime
+      - hrSystemNumUsers
+      - hrSystemProcesses
+
+      - hrStorage
+
+      - interfaces
+
+      - ipTrafficStats
+      - ipInReceives
+      - ipInHdrErrors
+      - ipInAddrErrors
+      - ipForwDatagrams
+      - ipInUnknownProtos
+      - ipInDiscards
+      - ipInDelivers
+      - ipOutRequests
+      - ipOutDiscards
+      - ipOutNoRoutes
+      - ipReasmReqds
+      - ipReasmOKs
+      - ipReasmFails
+      - ipFragOKs
+      - ipFragFails
+      - ipFragCreates
+
+      - icmp
+
+      - ifXTable
+      - 1.3.6.1.4.1.2021.4 # UCD memory
+      - 1.3.6.1.4.1.2021.10 # UCD Load
+      - systemStats
+      - ucdDiskIOMIB
+
+    lookups:
+      - old_index: ifIndex
+        new_index: ifAlias
+
+      - old_index: ipIfStatsIfIndex
+        new_index: ifAlias
+
+      - old_index: hrStorageIndex
+        new_index: hrStorageDescr
+
+      - old_index: laIndex
+        new_index: laNames

@@ -1,0 +1,2418 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+ubiquiti_edgemax:
+  walk:
+  - 1.3.6.1.2.1.2
+  - 1.3.6.1.2.1.25.2
+  - 1.3.6.1.2.1.31.1.1
+  - 1.3.6.1.2.1.4.31
+  - 1.3.6.1.2.1.5
+  - 1.3.6.1.4.1.2021.10
+  - 1.3.6.1.4.1.2021.11
+  - 1.3.6.1.4.1.2021.13.15
+  - 1.3.6.1.4.1.2021.4
+  get:
+  - 1.3.6.1.2.1.25.1.1.0
+  - 1.3.6.1.2.1.25.1.5.0
+  - 1.3.6.1.2.1.25.1.6.0
+  - 1.3.6.1.2.1.4.10.0
+  - 1.3.6.1.2.1.4.11.0
+  - 1.3.6.1.2.1.4.12.0
+  - 1.3.6.1.2.1.4.14.0
+  - 1.3.6.1.2.1.4.15.0
+  - 1.3.6.1.2.1.4.16.0
+  - 1.3.6.1.2.1.4.17.0
+  - 1.3.6.1.2.1.4.18.0
+  - 1.3.6.1.2.1.4.19.0
+  - 1.3.6.1.2.1.4.3.0
+  - 1.3.6.1.2.1.4.4.0
+  - 1.3.6.1.2.1.4.5.0
+  - 1.3.6.1.2.1.4.6.0
+  - 1.3.6.1.2.1.4.7.0
+  - 1.3.6.1.2.1.4.8.0
+  - 1.3.6.1.2.1.4.9.0
+  metrics:
+  - name: ifNumber
+    oid: 1.3.6.1.2.1.2.1
+    type: gauge
+    help: The number of network interfaces (regardless of their current state) present
+      on this system. - 1.3.6.1.2.1.2.1
+  - name: ifIndex
+    oid: 1.3.6.1.2.1.2.2.1.1
+    type: gauge
+    help: A unique value, greater than zero, for each interface - 1.3.6.1.2.1.2.2.1.1
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifDescr
+    oid: 1.3.6.1.2.1.2.2.1.2
+    type: DisplayString
+    help: A textual string containing information about the interface - 1.3.6.1.2.1.2.2.1.2
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifType
+    oid: 1.3.6.1.2.1.2.2.1.3
+    type: gauge
+    help: The type of interface - 1.3.6.1.2.1.2.2.1.3
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifMtu
+    oid: 1.3.6.1.2.1.2.2.1.4
+    type: gauge
+    help: The size of the largest packet which can be sent/received on the interface,
+      specified in octets - 1.3.6.1.2.1.2.2.1.4
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifSpeed
+    oid: 1.3.6.1.2.1.2.2.1.5
+    type: gauge
+    help: An estimate of the interface's current bandwidth in bits per second - 1.3.6.1.2.1.2.2.1.5
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifPhysAddress
+    oid: 1.3.6.1.2.1.2.2.1.6
+    type: PhysAddress48
+    help: The interface's address at its protocol sub-layer - 1.3.6.1.2.1.2.2.1.6
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifAdminStatus
+    oid: 1.3.6.1.2.1.2.2.1.7
+    type: gauge
+    help: The desired state of the interface - 1.3.6.1.2.1.2.2.1.7
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifOperStatus
+    oid: 1.3.6.1.2.1.2.2.1.8
+    type: gauge
+    help: The current operational state of the interface - 1.3.6.1.2.1.2.2.1.8
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifLastChange
+    oid: 1.3.6.1.2.1.2.2.1.9
+    type: gauge
+    help: The value of sysUpTime at the time the interface entered its current operational
+      state - 1.3.6.1.2.1.2.2.1.9
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifInOctets
+    oid: 1.3.6.1.2.1.2.2.1.10
+    type: counter
+    help: The total number of octets received on the interface, including framing
+      characters - 1.3.6.1.2.1.2.2.1.10
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifInUcastPkts
+    oid: 1.3.6.1.2.1.2.2.1.11
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+      which were not addressed to a multicast or broadcast address at this sub-layer
+      - 1.3.6.1.2.1.2.2.1.11
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifInNUcastPkts
+    oid: 1.3.6.1.2.1.2.2.1.12
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+      which were addressed to a multicast or broadcast address at this sub-layer -
+      1.3.6.1.2.1.2.2.1.12
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifInDiscards
+    oid: 1.3.6.1.2.1.2.2.1.13
+    type: counter
+    help: The number of inbound packets which were chosen to be discarded even though
+      no errors had been detected to prevent their being deliverable to a higher-layer
+      protocol - 1.3.6.1.2.1.2.2.1.13
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifInErrors
+    oid: 1.3.6.1.2.1.2.2.1.14
+    type: counter
+    help: For packet-oriented interfaces, the number of inbound packets that contained
+      errors preventing them from being deliverable to a higher-layer protocol - 1.3.6.1.2.1.2.2.1.14
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifInUnknownProtos
+    oid: 1.3.6.1.2.1.2.2.1.15
+    type: counter
+    help: For packet-oriented interfaces, the number of packets received via the interface
+      which were discarded because of an unknown or unsupported protocol - 1.3.6.1.2.1.2.2.1.15
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifOutOctets
+    oid: 1.3.6.1.2.1.2.2.1.16
+    type: counter
+    help: The total number of octets transmitted out of the interface, including framing
+      characters - 1.3.6.1.2.1.2.2.1.16
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifOutUcastPkts
+    oid: 1.3.6.1.2.1.2.2.1.17
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted,
+      and which were not addressed to a multicast or broadcast address at this sub-layer,
+      including those that were discarded or not sent - 1.3.6.1.2.1.2.2.1.17
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifOutNUcastPkts
+    oid: 1.3.6.1.2.1.2.2.1.18
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted,
+      and which were addressed to a multicast or broadcast address at this sub-layer,
+      including those that were discarded or not sent - 1.3.6.1.2.1.2.2.1.18
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifOutDiscards
+    oid: 1.3.6.1.2.1.2.2.1.19
+    type: counter
+    help: The number of outbound packets which were chosen to be discarded even though
+      no errors had been detected to prevent their being transmitted - 1.3.6.1.2.1.2.2.1.19
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifOutErrors
+    oid: 1.3.6.1.2.1.2.2.1.20
+    type: counter
+    help: For packet-oriented interfaces, the number of outbound packets that could
+      not be transmitted because of errors - 1.3.6.1.2.1.2.2.1.20
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifOutQLen
+    oid: 1.3.6.1.2.1.2.2.1.21
+    type: gauge
+    help: The length of the output packet queue (in packets). - 1.3.6.1.2.1.2.2.1.21
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: hrSystemUptime
+    oid: 1.3.6.1.2.1.25.1.1
+    type: gauge
+    help: The amount of time since this host was last initialized - 1.3.6.1.2.1.25.1.1
+  - name: hrSystemNumUsers
+    oid: 1.3.6.1.2.1.25.1.5
+    type: gauge
+    help: The number of user sessions for which this host is storing state information
+      - 1.3.6.1.2.1.25.1.5
+  - name: hrSystemProcesses
+    oid: 1.3.6.1.2.1.25.1.6
+    type: gauge
+    help: The number of process contexts currently loaded or running on this system.
+      - 1.3.6.1.2.1.25.1.6
+  - name: hrMemorySize
+    oid: 1.3.6.1.2.1.25.2.2
+    type: gauge
+    help: The amount of physical read-write main memory, typically RAM, contained
+      by the host. - 1.3.6.1.2.1.25.2.2
+  - name: hrStorageIndex
+    oid: 1.3.6.1.2.1.25.2.3.1.1
+    type: gauge
+    help: A unique value for each logical storage area contained by the host. - 1.3.6.1.2.1.25.2.3.1.1
+    indexes:
+    - labelname: hrStorageDescr
+      type: gauge
+    lookups:
+    - labels:
+      - hrStorageDescr
+      labelname: hrStorageDescr
+      oid: 1.3.6.1.2.1.25.2.3.1.3
+      type: DisplayString
+  - name: hrStorageDescr
+    oid: 1.3.6.1.2.1.25.2.3.1.3
+    type: DisplayString
+    help: A description of the type and instance of the storage described by this
+      entry. - 1.3.6.1.2.1.25.2.3.1.3
+    indexes:
+    - labelname: hrStorageDescr
+      type: gauge
+    lookups:
+    - labels:
+      - hrStorageDescr
+      labelname: hrStorageDescr
+      oid: 1.3.6.1.2.1.25.2.3.1.3
+      type: DisplayString
+  - name: hrStorageAllocationUnits
+    oid: 1.3.6.1.2.1.25.2.3.1.4
+    type: gauge
+    help: The size, in bytes, of the data objects allocated from this pool - 1.3.6.1.2.1.25.2.3.1.4
+    indexes:
+    - labelname: hrStorageDescr
+      type: gauge
+    lookups:
+    - labels:
+      - hrStorageDescr
+      labelname: hrStorageDescr
+      oid: 1.3.6.1.2.1.25.2.3.1.3
+      type: DisplayString
+  - name: hrStorageSize
+    oid: 1.3.6.1.2.1.25.2.3.1.5
+    type: gauge
+    help: The size of the storage represented by this entry, in units of hrStorageAllocationUnits
+      - 1.3.6.1.2.1.25.2.3.1.5
+    indexes:
+    - labelname: hrStorageDescr
+      type: gauge
+    lookups:
+    - labels:
+      - hrStorageDescr
+      labelname: hrStorageDescr
+      oid: 1.3.6.1.2.1.25.2.3.1.3
+      type: DisplayString
+  - name: hrStorageUsed
+    oid: 1.3.6.1.2.1.25.2.3.1.6
+    type: gauge
+    help: The amount of the storage represented by this entry that is allocated, in
+      units of hrStorageAllocationUnits. - 1.3.6.1.2.1.25.2.3.1.6
+    indexes:
+    - labelname: hrStorageDescr
+      type: gauge
+    lookups:
+    - labels:
+      - hrStorageDescr
+      labelname: hrStorageDescr
+      oid: 1.3.6.1.2.1.25.2.3.1.3
+      type: DisplayString
+  - name: hrStorageAllocationFailures
+    oid: 1.3.6.1.2.1.25.2.3.1.7
+    type: counter
+    help: The number of requests for storage represented by this entry that could
+      not be honored due to not enough storage - 1.3.6.1.2.1.25.2.3.1.7
+    indexes:
+    - labelname: hrStorageDescr
+      type: gauge
+    lookups:
+    - labels:
+      - hrStorageDescr
+      labelname: hrStorageDescr
+      oid: 1.3.6.1.2.1.25.2.3.1.3
+      type: DisplayString
+  - name: ifName
+    oid: 1.3.6.1.2.1.31.1.1.1.1
+    type: DisplayString
+    help: The textual name of the interface - 1.3.6.1.2.1.31.1.1.1.1
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifInMulticastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.2
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+      which were addressed to a multicast address at this sub-layer - 1.3.6.1.2.1.31.1.1.1.2
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifInBroadcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.3
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+      which were addressed to a broadcast address at this sub-layer - 1.3.6.1.2.1.31.1.1.1.3
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifOutMulticastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.4
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted,
+      and which were addressed to a multicast address at this sub-layer, including
+      those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.4
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifOutBroadcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.5
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted,
+      and which were addressed to a broadcast address at this sub-layer, including
+      those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.5
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifHCInOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.6
+    type: counter
+    help: The total number of octets received on the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.6
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifHCInUcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.7
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+      which were not addressed to a multicast or broadcast address at this sub-layer
+      - 1.3.6.1.2.1.31.1.1.1.7
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifHCInMulticastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.8
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+      which were addressed to a multicast address at this sub-layer - 1.3.6.1.2.1.31.1.1.1.8
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifHCInBroadcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.9
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+      which were addressed to a broadcast address at this sub-layer - 1.3.6.1.2.1.31.1.1.1.9
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifHCOutOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.10
+    type: counter
+    help: The total number of octets transmitted out of the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.10
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifHCOutUcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.11
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted,
+      and which were not addressed to a multicast or broadcast address at this sub-layer,
+      including those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.11
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifHCOutMulticastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.12
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted,
+      and which were addressed to a multicast address at this sub-layer, including
+      those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.12
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifHCOutBroadcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.13
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted,
+      and which were addressed to a broadcast address at this sub-layer, including
+      those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.13
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifLinkUpDownTrapEnable
+    oid: 1.3.6.1.2.1.31.1.1.1.14
+    type: gauge
+    help: Indicates whether linkUp/linkDown traps should be generated for this interface
+      - 1.3.6.1.2.1.31.1.1.1.14
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifHighSpeed
+    oid: 1.3.6.1.2.1.31.1.1.1.15
+    type: gauge
+    help: An estimate of the interface's current bandwidth in units of 1,000,000 bits
+      per second - 1.3.6.1.2.1.31.1.1.1.15
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifPromiscuousMode
+    oid: 1.3.6.1.2.1.31.1.1.1.16
+    type: gauge
+    help: This object has a value of false(2) if this interface only accepts packets/frames
+      that are addressed to this station - 1.3.6.1.2.1.31.1.1.1.16
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifConnectorPresent
+    oid: 1.3.6.1.2.1.31.1.1.1.17
+    type: gauge
+    help: This object has the value 'true(1)' if the interface sublayer has a physical
+      connector and the value 'false(2)' otherwise. - 1.3.6.1.2.1.31.1.1.1.17
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifAlias
+    oid: 1.3.6.1.2.1.31.1.1.1.18
+    type: DisplayString
+    help: This object is an 'alias' name for the interface as specified by a network
+      manager, and provides a non-volatile 'handle' for the interface - 1.3.6.1.2.1.31.1.1.1.18
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ifCounterDiscontinuityTime
+    oid: 1.3.6.1.2.1.31.1.1.1.19
+    type: gauge
+    help: The value of sysUpTime on the most recent occasion at which any one or more
+      of this interface's counters suffered a discontinuity - 1.3.6.1.2.1.31.1.1.1.19
+    indexes:
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipOutRequests
+    oid: 1.3.6.1.2.1.4.10
+    type: counter
+    help: The total number of IPv4 datagrams which local IPv4 user protocols (including
+      ICMP) supplied to IPv4 in requests for transmission - 1.3.6.1.2.1.4.10
+  - name: ipOutDiscards
+    oid: 1.3.6.1.2.1.4.11
+    type: counter
+    help: The number of output IPv4 datagrams for which no problem was encountered
+      to prevent their transmission to their destination, but which were discarded
+      (e.g., for lack of buffer space) - 1.3.6.1.2.1.4.11
+  - name: ipOutNoRoutes
+    oid: 1.3.6.1.2.1.4.12
+    type: counter
+    help: The number of IPv4 datagrams discarded because no route could be found to
+      transmit them to their destination - 1.3.6.1.2.1.4.12
+  - name: ipReasmReqds
+    oid: 1.3.6.1.2.1.4.14
+    type: counter
+    help: The number of IPv4 fragments received which needed to be reassembled at
+      this entity - 1.3.6.1.2.1.4.14
+  - name: ipReasmOKs
+    oid: 1.3.6.1.2.1.4.15
+    type: counter
+    help: The number of IPv4 datagrams successfully re-assembled - 1.3.6.1.2.1.4.15
+  - name: ipReasmFails
+    oid: 1.3.6.1.2.1.4.16
+    type: counter
+    help: 'The number of failures detected by the IPv4 re-assembly algorithm (for
+      whatever reason: timed out, errors, etc) - 1.3.6.1.2.1.4.16'
+  - name: ipFragOKs
+    oid: 1.3.6.1.2.1.4.17
+    type: counter
+    help: The number of IPv4 datagrams that have been successfully fragmented at this
+      entity - 1.3.6.1.2.1.4.17
+  - name: ipFragFails
+    oid: 1.3.6.1.2.1.4.18
+    type: counter
+    help: The number of IPv4 datagrams that have been discarded because they needed
+      to be fragmented at this entity but could not be, e.g., because their Don't
+      Fragment flag was set - 1.3.6.1.2.1.4.18
+  - name: ipFragCreates
+    oid: 1.3.6.1.2.1.4.19
+    type: counter
+    help: The number of IPv4 datagram fragments that have been generated as a result
+      of fragmentation at this entity - 1.3.6.1.2.1.4.19
+  - name: ipInReceives
+    oid: 1.3.6.1.2.1.4.3
+    type: counter
+    help: The total number of input datagrams received from interfaces, including
+      those received in error - 1.3.6.1.2.1.4.3
+  - name: ipSystemStatsIPVersion
+    oid: 1.3.6.1.2.1.4.31.1.1.1
+    type: gauge
+    help: The IP version of this row. - 1.3.6.1.2.1.4.31.1.1.1
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsInReceives
+    oid: 1.3.6.1.2.1.4.31.1.1.3
+    type: counter
+    help: The total number of input IP datagrams received, including those received
+      in error - 1.3.6.1.2.1.4.31.1.1.3
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsHCInReceives
+    oid: 1.3.6.1.2.1.4.31.1.1.4
+    type: counter
+    help: The total number of input IP datagrams received, including those received
+      in error - 1.3.6.1.2.1.4.31.1.1.4
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsInOctets
+    oid: 1.3.6.1.2.1.4.31.1.1.5
+    type: counter
+    help: The total number of octets received in input IP datagrams, including those
+      received in error - 1.3.6.1.2.1.4.31.1.1.5
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsHCInOctets
+    oid: 1.3.6.1.2.1.4.31.1.1.6
+    type: counter
+    help: The total number of octets received in input IP datagrams, including those
+      received in error - 1.3.6.1.2.1.4.31.1.1.6
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsInHdrErrors
+    oid: 1.3.6.1.2.1.4.31.1.1.7
+    type: counter
+    help: The number of input IP datagrams discarded due to errors in their IP headers,
+      including version number mismatch, other format errors, hop count exceeded,
+      errors discovered in processing their IP options, etc - 1.3.6.1.2.1.4.31.1.1.7
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsInNoRoutes
+    oid: 1.3.6.1.2.1.4.31.1.1.8
+    type: counter
+    help: The number of input IP datagrams discarded because no route could be found
+      to transmit them to their destination - 1.3.6.1.2.1.4.31.1.1.8
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsInAddrErrors
+    oid: 1.3.6.1.2.1.4.31.1.1.9
+    type: counter
+    help: The number of input IP datagrams discarded because the IP address in their
+      IP header's destination field was not a valid address to be received at this
+      entity - 1.3.6.1.2.1.4.31.1.1.9
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsInUnknownProtos
+    oid: 1.3.6.1.2.1.4.31.1.1.10
+    type: counter
+    help: The number of locally-addressed IP datagrams received successfully but discarded
+      because of an unknown or unsupported protocol - 1.3.6.1.2.1.4.31.1.1.10
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsInTruncatedPkts
+    oid: 1.3.6.1.2.1.4.31.1.1.11
+    type: counter
+    help: The number of input IP datagrams discarded because the datagram frame didn't
+      carry enough data - 1.3.6.1.2.1.4.31.1.1.11
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsInForwDatagrams
+    oid: 1.3.6.1.2.1.4.31.1.1.12
+    type: counter
+    help: The number of input datagrams for which this entity was not their final
+      IP destination and for which this entity attempted to find a route to forward
+      them to that final destination - 1.3.6.1.2.1.4.31.1.1.12
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsHCInForwDatagrams
+    oid: 1.3.6.1.2.1.4.31.1.1.13
+    type: counter
+    help: The number of input datagrams for which this entity was not their final
+      IP destination and for which this entity attempted to find a route to forward
+      them to that final destination - 1.3.6.1.2.1.4.31.1.1.13
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsReasmReqds
+    oid: 1.3.6.1.2.1.4.31.1.1.14
+    type: counter
+    help: The number of IP fragments received that needed to be reassembled at this
+      interface - 1.3.6.1.2.1.4.31.1.1.14
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsReasmOKs
+    oid: 1.3.6.1.2.1.4.31.1.1.15
+    type: counter
+    help: The number of IP datagrams successfully reassembled - 1.3.6.1.2.1.4.31.1.1.15
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsReasmFails
+    oid: 1.3.6.1.2.1.4.31.1.1.16
+    type: counter
+    help: 'The number of failures detected by the IP re-assembly algorithm (for whatever
+      reason: timed out, errors, etc.) - 1.3.6.1.2.1.4.31.1.1.16'
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsInDiscards
+    oid: 1.3.6.1.2.1.4.31.1.1.17
+    type: counter
+    help: The number of input IP datagrams for which no problems were encountered
+      to prevent their continued processing, but were discarded (e.g., for lack of
+      buffer space) - 1.3.6.1.2.1.4.31.1.1.17
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsInDelivers
+    oid: 1.3.6.1.2.1.4.31.1.1.18
+    type: counter
+    help: The total number of datagrams successfully delivered to IP user-protocols
+      (including ICMP) - 1.3.6.1.2.1.4.31.1.1.18
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsHCInDelivers
+    oid: 1.3.6.1.2.1.4.31.1.1.19
+    type: counter
+    help: The total number of datagrams successfully delivered to IP user-protocols
+      (including ICMP) - 1.3.6.1.2.1.4.31.1.1.19
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsOutRequests
+    oid: 1.3.6.1.2.1.4.31.1.1.20
+    type: counter
+    help: The total number of IP datagrams that local IP user- protocols (including
+      ICMP) supplied to IP in requests for transmission - 1.3.6.1.2.1.4.31.1.1.20
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsHCOutRequests
+    oid: 1.3.6.1.2.1.4.31.1.1.21
+    type: counter
+    help: The total number of IP datagrams that local IP user- protocols (including
+      ICMP) supplied to IP in requests for transmission - 1.3.6.1.2.1.4.31.1.1.21
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsOutNoRoutes
+    oid: 1.3.6.1.2.1.4.31.1.1.22
+    type: counter
+    help: The number of locally generated IP datagrams discarded because no route
+      could be found to transmit them to their destination - 1.3.6.1.2.1.4.31.1.1.22
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsOutForwDatagrams
+    oid: 1.3.6.1.2.1.4.31.1.1.23
+    type: counter
+    help: The number of datagrams for which this entity was not their final IP destination
+      and for which it was successful in finding a path to their final destination
+      - 1.3.6.1.2.1.4.31.1.1.23
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsHCOutForwDatagrams
+    oid: 1.3.6.1.2.1.4.31.1.1.24
+    type: counter
+    help: The number of datagrams for which this entity was not their final IP destination
+      and for which it was successful in finding a path to their final destination
+      - 1.3.6.1.2.1.4.31.1.1.24
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsOutDiscards
+    oid: 1.3.6.1.2.1.4.31.1.1.25
+    type: counter
+    help: The number of output IP datagrams for which no problem was encountered to
+      prevent their transmission to their destination, but were discarded (e.g., for
+      lack of buffer space) - 1.3.6.1.2.1.4.31.1.1.25
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsOutFragReqds
+    oid: 1.3.6.1.2.1.4.31.1.1.26
+    type: counter
+    help: The number of IP datagrams that would require fragmentation in order to
+      be transmitted - 1.3.6.1.2.1.4.31.1.1.26
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsOutFragOKs
+    oid: 1.3.6.1.2.1.4.31.1.1.27
+    type: counter
+    help: The number of IP datagrams that have been successfully fragmented - 1.3.6.1.2.1.4.31.1.1.27
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsOutFragFails
+    oid: 1.3.6.1.2.1.4.31.1.1.28
+    type: counter
+    help: The number of IP datagrams that have been discarded because they needed
+      to be fragmented but could not be - 1.3.6.1.2.1.4.31.1.1.28
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsOutFragCreates
+    oid: 1.3.6.1.2.1.4.31.1.1.29
+    type: counter
+    help: The number of output datagram fragments that have been generated as a result
+      of IP fragmentation - 1.3.6.1.2.1.4.31.1.1.29
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsOutTransmits
+    oid: 1.3.6.1.2.1.4.31.1.1.30
+    type: counter
+    help: The total number of IP datagrams that this entity supplied to the lower
+      layers for transmission - 1.3.6.1.2.1.4.31.1.1.30
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsHCOutTransmits
+    oid: 1.3.6.1.2.1.4.31.1.1.31
+    type: counter
+    help: The total number of IP datagrams that this entity supplied to the lower
+      layers for transmission - 1.3.6.1.2.1.4.31.1.1.31
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsOutOctets
+    oid: 1.3.6.1.2.1.4.31.1.1.32
+    type: counter
+    help: The total number of octets in IP datagrams delivered to the lower layers
+      for transmission - 1.3.6.1.2.1.4.31.1.1.32
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsHCOutOctets
+    oid: 1.3.6.1.2.1.4.31.1.1.33
+    type: counter
+    help: The total number of octets in IP datagrams delivered to the lower layers
+      for transmission - 1.3.6.1.2.1.4.31.1.1.33
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsInMcastPkts
+    oid: 1.3.6.1.2.1.4.31.1.1.34
+    type: counter
+    help: The number of IP multicast datagrams received - 1.3.6.1.2.1.4.31.1.1.34
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsHCInMcastPkts
+    oid: 1.3.6.1.2.1.4.31.1.1.35
+    type: counter
+    help: The number of IP multicast datagrams received - 1.3.6.1.2.1.4.31.1.1.35
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsInMcastOctets
+    oid: 1.3.6.1.2.1.4.31.1.1.36
+    type: counter
+    help: The total number of octets received in IP multicast datagrams - 1.3.6.1.2.1.4.31.1.1.36
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsHCInMcastOctets
+    oid: 1.3.6.1.2.1.4.31.1.1.37
+    type: counter
+    help: The total number of octets received in IP multicast datagrams - 1.3.6.1.2.1.4.31.1.1.37
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsOutMcastPkts
+    oid: 1.3.6.1.2.1.4.31.1.1.38
+    type: counter
+    help: The number of IP multicast datagrams transmitted - 1.3.6.1.2.1.4.31.1.1.38
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsHCOutMcastPkts
+    oid: 1.3.6.1.2.1.4.31.1.1.39
+    type: counter
+    help: The number of IP multicast datagrams transmitted - 1.3.6.1.2.1.4.31.1.1.39
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsOutMcastOctets
+    oid: 1.3.6.1.2.1.4.31.1.1.40
+    type: counter
+    help: The total number of octets transmitted in IP multicast datagrams - 1.3.6.1.2.1.4.31.1.1.40
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsHCOutMcastOctets
+    oid: 1.3.6.1.2.1.4.31.1.1.41
+    type: counter
+    help: The total number of octets transmitted in IP multicast datagrams - 1.3.6.1.2.1.4.31.1.1.41
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsInBcastPkts
+    oid: 1.3.6.1.2.1.4.31.1.1.42
+    type: counter
+    help: The number of IP broadcast datagrams received - 1.3.6.1.2.1.4.31.1.1.42
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsHCInBcastPkts
+    oid: 1.3.6.1.2.1.4.31.1.1.43
+    type: counter
+    help: The number of IP broadcast datagrams received - 1.3.6.1.2.1.4.31.1.1.43
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsOutBcastPkts
+    oid: 1.3.6.1.2.1.4.31.1.1.44
+    type: counter
+    help: The number of IP broadcast datagrams transmitted - 1.3.6.1.2.1.4.31.1.1.44
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsHCOutBcastPkts
+    oid: 1.3.6.1.2.1.4.31.1.1.45
+    type: counter
+    help: The number of IP broadcast datagrams transmitted - 1.3.6.1.2.1.4.31.1.1.45
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsDiscontinuityTime
+    oid: 1.3.6.1.2.1.4.31.1.1.46
+    type: gauge
+    help: The value of sysUpTime on the most recent occasion at which any one or more
+      of this entry's counters suffered a discontinuity - 1.3.6.1.2.1.4.31.1.1.46
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipSystemStatsRefreshRate
+    oid: 1.3.6.1.2.1.4.31.1.1.47
+    type: gauge
+    help: The minimum reasonable polling interval for this entry - 1.3.6.1.2.1.4.31.1.1.47
+    indexes:
+    - labelname: ipSystemStatsIPVersion
+      type: gauge
+  - name: ipIfStatsTableLastChange
+    oid: 1.3.6.1.2.1.4.31.2
+    type: gauge
+    help: The value of sysUpTime on the most recent occasion at which a row in the
+      ipIfStatsTable was added or deleted - 1.3.6.1.2.1.4.31.2
+  - name: ipIfStatsIPVersion
+    oid: 1.3.6.1.2.1.4.31.3.1.1
+    type: gauge
+    help: The IP version of this row. - 1.3.6.1.2.1.4.31.3.1.1
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsIfIndex
+    oid: 1.3.6.1.2.1.4.31.3.1.2
+    type: gauge
+    help: The index value that uniquely identifies the interface to which this entry
+      is applicable - 1.3.6.1.2.1.4.31.3.1.2
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsInReceives
+    oid: 1.3.6.1.2.1.4.31.3.1.3
+    type: counter
+    help: The total number of input IP datagrams received, including those received
+      in error - 1.3.6.1.2.1.4.31.3.1.3
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsHCInReceives
+    oid: 1.3.6.1.2.1.4.31.3.1.4
+    type: counter
+    help: The total number of input IP datagrams received, including those received
+      in error - 1.3.6.1.2.1.4.31.3.1.4
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsInOctets
+    oid: 1.3.6.1.2.1.4.31.3.1.5
+    type: counter
+    help: The total number of octets received in input IP datagrams, including those
+      received in error - 1.3.6.1.2.1.4.31.3.1.5
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsHCInOctets
+    oid: 1.3.6.1.2.1.4.31.3.1.6
+    type: counter
+    help: The total number of octets received in input IP datagrams, including those
+      received in error - 1.3.6.1.2.1.4.31.3.1.6
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsInHdrErrors
+    oid: 1.3.6.1.2.1.4.31.3.1.7
+    type: counter
+    help: The number of input IP datagrams discarded due to errors in their IP headers,
+      including version number mismatch, other format errors, hop count exceeded,
+      errors discovered in processing their IP options, etc - 1.3.6.1.2.1.4.31.3.1.7
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsInNoRoutes
+    oid: 1.3.6.1.2.1.4.31.3.1.8
+    type: counter
+    help: The number of input IP datagrams discarded because no route could be found
+      to transmit them to their destination - 1.3.6.1.2.1.4.31.3.1.8
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsInAddrErrors
+    oid: 1.3.6.1.2.1.4.31.3.1.9
+    type: counter
+    help: The number of input IP datagrams discarded because the IP address in their
+      IP header's destination field was not a valid address to be received at this
+      entity - 1.3.6.1.2.1.4.31.3.1.9
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsInUnknownProtos
+    oid: 1.3.6.1.2.1.4.31.3.1.10
+    type: counter
+    help: The number of locally-addressed IP datagrams received successfully but discarded
+      because of an unknown or unsupported protocol - 1.3.6.1.2.1.4.31.3.1.10
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsInTruncatedPkts
+    oid: 1.3.6.1.2.1.4.31.3.1.11
+    type: counter
+    help: The number of input IP datagrams discarded because the datagram frame didn't
+      carry enough data - 1.3.6.1.2.1.4.31.3.1.11
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsInForwDatagrams
+    oid: 1.3.6.1.2.1.4.31.3.1.12
+    type: counter
+    help: The number of input datagrams for which this entity was not their final
+      IP destination and for which this entity attempted to find a route to forward
+      them to that final destination - 1.3.6.1.2.1.4.31.3.1.12
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsHCInForwDatagrams
+    oid: 1.3.6.1.2.1.4.31.3.1.13
+    type: counter
+    help: The number of input datagrams for which this entity was not their final
+      IP destination and for which this entity attempted to find a route to forward
+      them to that final destination - 1.3.6.1.2.1.4.31.3.1.13
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsReasmReqds
+    oid: 1.3.6.1.2.1.4.31.3.1.14
+    type: counter
+    help: The number of IP fragments received that needed to be reassembled at this
+      interface - 1.3.6.1.2.1.4.31.3.1.14
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsReasmOKs
+    oid: 1.3.6.1.2.1.4.31.3.1.15
+    type: counter
+    help: The number of IP datagrams successfully reassembled - 1.3.6.1.2.1.4.31.3.1.15
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsReasmFails
+    oid: 1.3.6.1.2.1.4.31.3.1.16
+    type: counter
+    help: 'The number of failures detected by the IP re-assembly algorithm (for whatever
+      reason: timed out, errors, etc.) - 1.3.6.1.2.1.4.31.3.1.16'
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsInDiscards
+    oid: 1.3.6.1.2.1.4.31.3.1.17
+    type: counter
+    help: The number of input IP datagrams for which no problems were encountered
+      to prevent their continued processing, but were discarded (e.g., for lack of
+      buffer space) - 1.3.6.1.2.1.4.31.3.1.17
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsInDelivers
+    oid: 1.3.6.1.2.1.4.31.3.1.18
+    type: counter
+    help: The total number of datagrams successfully delivered to IP user-protocols
+      (including ICMP) - 1.3.6.1.2.1.4.31.3.1.18
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsHCInDelivers
+    oid: 1.3.6.1.2.1.4.31.3.1.19
+    type: counter
+    help: The total number of datagrams successfully delivered to IP user-protocols
+      (including ICMP) - 1.3.6.1.2.1.4.31.3.1.19
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsOutRequests
+    oid: 1.3.6.1.2.1.4.31.3.1.20
+    type: counter
+    help: The total number of IP datagrams that local IP user- protocols (including
+      ICMP) supplied to IP in requests for transmission - 1.3.6.1.2.1.4.31.3.1.20
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsHCOutRequests
+    oid: 1.3.6.1.2.1.4.31.3.1.21
+    type: counter
+    help: The total number of IP datagrams that local IP user- protocols (including
+      ICMP) supplied to IP in requests for transmission - 1.3.6.1.2.1.4.31.3.1.21
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsOutForwDatagrams
+    oid: 1.3.6.1.2.1.4.31.3.1.23
+    type: counter
+    help: The number of datagrams for which this entity was not their final IP destination
+      and for which it was successful in finding a path to their final destination
+      - 1.3.6.1.2.1.4.31.3.1.23
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsHCOutForwDatagrams
+    oid: 1.3.6.1.2.1.4.31.3.1.24
+    type: counter
+    help: The number of datagrams for which this entity was not their final IP destination
+      and for which it was successful in finding a path to their final destination
+      - 1.3.6.1.2.1.4.31.3.1.24
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsOutDiscards
+    oid: 1.3.6.1.2.1.4.31.3.1.25
+    type: counter
+    help: The number of output IP datagrams for which no problem was encountered to
+      prevent their transmission to their destination, but were discarded (e.g., for
+      lack of buffer space) - 1.3.6.1.2.1.4.31.3.1.25
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsOutFragReqds
+    oid: 1.3.6.1.2.1.4.31.3.1.26
+    type: counter
+    help: The number of IP datagrams that would require fragmentation in order to
+      be transmitted - 1.3.6.1.2.1.4.31.3.1.26
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsOutFragOKs
+    oid: 1.3.6.1.2.1.4.31.3.1.27
+    type: counter
+    help: The number of IP datagrams that have been successfully fragmented - 1.3.6.1.2.1.4.31.3.1.27
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsOutFragFails
+    oid: 1.3.6.1.2.1.4.31.3.1.28
+    type: counter
+    help: The number of IP datagrams that have been discarded because they needed
+      to be fragmented but could not be - 1.3.6.1.2.1.4.31.3.1.28
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsOutFragCreates
+    oid: 1.3.6.1.2.1.4.31.3.1.29
+    type: counter
+    help: The number of output datagram fragments that have been generated as a result
+      of IP fragmentation - 1.3.6.1.2.1.4.31.3.1.29
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsOutTransmits
+    oid: 1.3.6.1.2.1.4.31.3.1.30
+    type: counter
+    help: The total number of IP datagrams that this entity supplied to the lower
+      layers for transmission - 1.3.6.1.2.1.4.31.3.1.30
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsHCOutTransmits
+    oid: 1.3.6.1.2.1.4.31.3.1.31
+    type: counter
+    help: The total number of IP datagrams that this entity supplied to the lower
+      layers for transmission - 1.3.6.1.2.1.4.31.3.1.31
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsOutOctets
+    oid: 1.3.6.1.2.1.4.31.3.1.32
+    type: counter
+    help: The total number of octets in IP datagrams delivered to the lower layers
+      for transmission - 1.3.6.1.2.1.4.31.3.1.32
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsHCOutOctets
+    oid: 1.3.6.1.2.1.4.31.3.1.33
+    type: counter
+    help: The total number of octets in IP datagrams delivered to the lower layers
+      for transmission - 1.3.6.1.2.1.4.31.3.1.33
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsInMcastPkts
+    oid: 1.3.6.1.2.1.4.31.3.1.34
+    type: counter
+    help: The number of IP multicast datagrams received - 1.3.6.1.2.1.4.31.3.1.34
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsHCInMcastPkts
+    oid: 1.3.6.1.2.1.4.31.3.1.35
+    type: counter
+    help: The number of IP multicast datagrams received - 1.3.6.1.2.1.4.31.3.1.35
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsInMcastOctets
+    oid: 1.3.6.1.2.1.4.31.3.1.36
+    type: counter
+    help: The total number of octets received in IP multicast datagrams - 1.3.6.1.2.1.4.31.3.1.36
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsHCInMcastOctets
+    oid: 1.3.6.1.2.1.4.31.3.1.37
+    type: counter
+    help: The total number of octets received in IP multicast datagrams - 1.3.6.1.2.1.4.31.3.1.37
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsOutMcastPkts
+    oid: 1.3.6.1.2.1.4.31.3.1.38
+    type: counter
+    help: The number of IP multicast datagrams transmitted - 1.3.6.1.2.1.4.31.3.1.38
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsHCOutMcastPkts
+    oid: 1.3.6.1.2.1.4.31.3.1.39
+    type: counter
+    help: The number of IP multicast datagrams transmitted - 1.3.6.1.2.1.4.31.3.1.39
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsOutMcastOctets
+    oid: 1.3.6.1.2.1.4.31.3.1.40
+    type: counter
+    help: The total number of octets transmitted in IP multicast datagrams - 1.3.6.1.2.1.4.31.3.1.40
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsHCOutMcastOctets
+    oid: 1.3.6.1.2.1.4.31.3.1.41
+    type: counter
+    help: The total number of octets transmitted in IP multicast datagrams - 1.3.6.1.2.1.4.31.3.1.41
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsInBcastPkts
+    oid: 1.3.6.1.2.1.4.31.3.1.42
+    type: counter
+    help: The number of IP broadcast datagrams received - 1.3.6.1.2.1.4.31.3.1.42
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsHCInBcastPkts
+    oid: 1.3.6.1.2.1.4.31.3.1.43
+    type: counter
+    help: The number of IP broadcast datagrams received - 1.3.6.1.2.1.4.31.3.1.43
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsOutBcastPkts
+    oid: 1.3.6.1.2.1.4.31.3.1.44
+    type: counter
+    help: The number of IP broadcast datagrams transmitted - 1.3.6.1.2.1.4.31.3.1.44
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsHCOutBcastPkts
+    oid: 1.3.6.1.2.1.4.31.3.1.45
+    type: counter
+    help: The number of IP broadcast datagrams transmitted - 1.3.6.1.2.1.4.31.3.1.45
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsDiscontinuityTime
+    oid: 1.3.6.1.2.1.4.31.3.1.46
+    type: gauge
+    help: The value of sysUpTime on the most recent occasion at which any one or more
+      of this entry's counters suffered a discontinuity - 1.3.6.1.2.1.4.31.3.1.46
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipIfStatsRefreshRate
+    oid: 1.3.6.1.2.1.4.31.3.1.47
+    type: gauge
+    help: The minimum reasonable polling interval for this entry - 1.3.6.1.2.1.4.31.3.1.47
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+    - labelname: ifAlias
+      type: gauge
+    lookups:
+    - labels:
+      - ifAlias
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
+  - name: ipInHdrErrors
+    oid: 1.3.6.1.2.1.4.4
+    type: counter
+    help: The number of input datagrams discarded due to errors in their IPv4 headers,
+      including bad checksums, version number mismatch, other format errors, time-to-live
+      exceeded, errors discovered in processing their IPv4 options, etc - 1.3.6.1.2.1.4.4
+  - name: ipInAddrErrors
+    oid: 1.3.6.1.2.1.4.5
+    type: counter
+    help: The number of input datagrams discarded because the IPv4 address in their
+      IPv4 header's destination field was not a valid address to be received at this
+      entity - 1.3.6.1.2.1.4.5
+  - name: ipForwDatagrams
+    oid: 1.3.6.1.2.1.4.6
+    type: counter
+    help: The number of input datagrams for which this entity was not their final
+      IPv4 destination, as a result of which an attempt was made to find a route to
+      forward them to that final destination - 1.3.6.1.2.1.4.6
+  - name: ipInUnknownProtos
+    oid: 1.3.6.1.2.1.4.7
+    type: counter
+    help: The number of locally-addressed datagrams received successfully but discarded
+      because of an unknown or unsupported protocol - 1.3.6.1.2.1.4.7
+  - name: ipInDiscards
+    oid: 1.3.6.1.2.1.4.8
+    type: counter
+    help: The number of input IPv4 datagrams for which no problems were encountered
+      to prevent their continued processing, but which were discarded (e.g., for lack
+      of buffer space) - 1.3.6.1.2.1.4.8
+  - name: ipInDelivers
+    oid: 1.3.6.1.2.1.4.9
+    type: counter
+    help: The total number of input datagrams successfully delivered to IPv4 user-protocols
+      (including ICMP) - 1.3.6.1.2.1.4.9
+  - name: icmpStatsIPVersion
+    oid: 1.3.6.1.2.1.5.29.1.1
+    type: gauge
+    help: The IP version of the statistics. - 1.3.6.1.2.1.5.29.1.1
+    indexes:
+    - labelname: icmpStatsIPVersion
+      type: gauge
+  - name: icmpStatsInMsgs
+    oid: 1.3.6.1.2.1.5.29.1.2
+    type: counter
+    help: The total number of ICMP messages that the entity received - 1.3.6.1.2.1.5.29.1.2
+    indexes:
+    - labelname: icmpStatsIPVersion
+      type: gauge
+  - name: icmpStatsInErrors
+    oid: 1.3.6.1.2.1.5.29.1.3
+    type: counter
+    help: The number of ICMP messages that the entity received but determined as having
+      ICMP-specific errors (bad ICMP checksums, bad length, etc.). - 1.3.6.1.2.1.5.29.1.3
+    indexes:
+    - labelname: icmpStatsIPVersion
+      type: gauge
+  - name: icmpStatsOutMsgs
+    oid: 1.3.6.1.2.1.5.29.1.4
+    type: counter
+    help: The total number of ICMP messages that the entity attempted to send - 1.3.6.1.2.1.5.29.1.4
+    indexes:
+    - labelname: icmpStatsIPVersion
+      type: gauge
+  - name: icmpStatsOutErrors
+    oid: 1.3.6.1.2.1.5.29.1.5
+    type: counter
+    help: The number of ICMP messages that this entity did not send due to problems
+      discovered within ICMP, such as a lack of buffers - 1.3.6.1.2.1.5.29.1.5
+    indexes:
+    - labelname: icmpStatsIPVersion
+      type: gauge
+  - name: icmpMsgStatsIPVersion
+    oid: 1.3.6.1.2.1.5.30.1.1
+    type: gauge
+    help: The IP version of the statistics. - 1.3.6.1.2.1.5.30.1.1
+    indexes:
+    - labelname: icmpMsgStatsIPVersion
+      type: gauge
+    - labelname: icmpMsgStatsType
+      type: gauge
+  - name: icmpMsgStatsType
+    oid: 1.3.6.1.2.1.5.30.1.2
+    type: gauge
+    help: The ICMP type field of the message type being counted by this row - 1.3.6.1.2.1.5.30.1.2
+    indexes:
+    - labelname: icmpMsgStatsIPVersion
+      type: gauge
+    - labelname: icmpMsgStatsType
+      type: gauge
+  - name: icmpMsgStatsInPkts
+    oid: 1.3.6.1.2.1.5.30.1.3
+    type: counter
+    help: The number of input packets for this AF and type. - 1.3.6.1.2.1.5.30.1.3
+    indexes:
+    - labelname: icmpMsgStatsIPVersion
+      type: gauge
+    - labelname: icmpMsgStatsType
+      type: gauge
+  - name: icmpMsgStatsOutPkts
+    oid: 1.3.6.1.2.1.5.30.1.4
+    type: counter
+    help: The number of output packets for this AF and type. - 1.3.6.1.2.1.5.30.1.4
+    indexes:
+    - labelname: icmpMsgStatsIPVersion
+      type: gauge
+    - labelname: icmpMsgStatsType
+      type: gauge
+  - name: icmpInMsgs
+    oid: 1.3.6.1.2.1.5.1
+    type: counter
+    help: The total number of ICMP messages which the entity received - 1.3.6.1.2.1.5.1
+  - name: icmpInErrors
+    oid: 1.3.6.1.2.1.5.2
+    type: counter
+    help: The number of ICMP messages which the entity received but determined as
+      having ICMP-specific errors (bad ICMP checksums, bad length, etc.) - 1.3.6.1.2.1.5.2
+  - name: icmpInDestUnreachs
+    oid: 1.3.6.1.2.1.5.3
+    type: counter
+    help: The number of ICMP Destination Unreachable messages received - 1.3.6.1.2.1.5.3
+  - name: icmpInTimeExcds
+    oid: 1.3.6.1.2.1.5.4
+    type: counter
+    help: The number of ICMP Time Exceeded messages received - 1.3.6.1.2.1.5.4
+  - name: icmpInParmProbs
+    oid: 1.3.6.1.2.1.5.5
+    type: counter
+    help: The number of ICMP Parameter Problem messages received - 1.3.6.1.2.1.5.5
+  - name: icmpInSrcQuenchs
+    oid: 1.3.6.1.2.1.5.6
+    type: counter
+    help: The number of ICMP Source Quench messages received - 1.3.6.1.2.1.5.6
+  - name: icmpInRedirects
+    oid: 1.3.6.1.2.1.5.7
+    type: counter
+    help: The number of ICMP Redirect messages received - 1.3.6.1.2.1.5.7
+  - name: icmpInEchos
+    oid: 1.3.6.1.2.1.5.8
+    type: counter
+    help: The number of ICMP Echo (request) messages received - 1.3.6.1.2.1.5.8
+  - name: icmpInEchoReps
+    oid: 1.3.6.1.2.1.5.9
+    type: counter
+    help: The number of ICMP Echo Reply messages received - 1.3.6.1.2.1.5.9
+  - name: icmpInTimestamps
+    oid: 1.3.6.1.2.1.5.10
+    type: counter
+    help: The number of ICMP Timestamp (request) messages received - 1.3.6.1.2.1.5.10
+  - name: icmpInTimestampReps
+    oid: 1.3.6.1.2.1.5.11
+    type: counter
+    help: The number of ICMP Timestamp Reply messages received - 1.3.6.1.2.1.5.11
+  - name: icmpInAddrMasks
+    oid: 1.3.6.1.2.1.5.12
+    type: counter
+    help: The number of ICMP Address Mask Request messages received - 1.3.6.1.2.1.5.12
+  - name: icmpInAddrMaskReps
+    oid: 1.3.6.1.2.1.5.13
+    type: counter
+    help: The number of ICMP Address Mask Reply messages received - 1.3.6.1.2.1.5.13
+  - name: icmpOutMsgs
+    oid: 1.3.6.1.2.1.5.14
+    type: counter
+    help: The total number of ICMP messages which this entity attempted to send -
+      1.3.6.1.2.1.5.14
+  - name: icmpOutErrors
+    oid: 1.3.6.1.2.1.5.15
+    type: counter
+    help: The number of ICMP messages which this entity did not send due to problems
+      discovered within ICMP, such as a lack of buffers - 1.3.6.1.2.1.5.15
+  - name: icmpOutDestUnreachs
+    oid: 1.3.6.1.2.1.5.16
+    type: counter
+    help: The number of ICMP Destination Unreachable messages sent - 1.3.6.1.2.1.5.16
+  - name: icmpOutTimeExcds
+    oid: 1.3.6.1.2.1.5.17
+    type: counter
+    help: The number of ICMP Time Exceeded messages sent - 1.3.6.1.2.1.5.17
+  - name: icmpOutParmProbs
+    oid: 1.3.6.1.2.1.5.18
+    type: counter
+    help: The number of ICMP Parameter Problem messages sent - 1.3.6.1.2.1.5.18
+  - name: icmpOutSrcQuenchs
+    oid: 1.3.6.1.2.1.5.19
+    type: counter
+    help: The number of ICMP Source Quench messages sent - 1.3.6.1.2.1.5.19
+  - name: icmpOutRedirects
+    oid: 1.3.6.1.2.1.5.20
+    type: counter
+    help: The number of ICMP Redirect messages sent - 1.3.6.1.2.1.5.20
+  - name: icmpOutEchos
+    oid: 1.3.6.1.2.1.5.21
+    type: counter
+    help: The number of ICMP Echo (request) messages sent - 1.3.6.1.2.1.5.21
+  - name: icmpOutEchoReps
+    oid: 1.3.6.1.2.1.5.22
+    type: counter
+    help: The number of ICMP Echo Reply messages sent - 1.3.6.1.2.1.5.22
+  - name: icmpOutTimestamps
+    oid: 1.3.6.1.2.1.5.23
+    type: counter
+    help: The number of ICMP Timestamp (request) messages sent - 1.3.6.1.2.1.5.23
+  - name: icmpOutTimestampReps
+    oid: 1.3.6.1.2.1.5.24
+    type: counter
+    help: The number of ICMP Timestamp Reply messages sent - 1.3.6.1.2.1.5.24
+  - name: icmpOutAddrMasks
+    oid: 1.3.6.1.2.1.5.25
+    type: counter
+    help: The number of ICMP Address Mask Request messages sent - 1.3.6.1.2.1.5.25
+  - name: icmpOutAddrMaskReps
+    oid: 1.3.6.1.2.1.5.26
+    type: counter
+    help: The number of ICMP Address Mask Reply messages sent - 1.3.6.1.2.1.5.26
+  - name: laIndex
+    oid: 1.3.6.1.4.1.2021.10.1.1
+    type: gauge
+    help: reference index/row number for each observed loadave. - 1.3.6.1.4.1.2021.10.1.1
+    indexes:
+    - labelname: laIndex
+      type: gauge
+  - name: laNames
+    oid: 1.3.6.1.4.1.2021.10.1.2
+    type: DisplayString
+    help: The list of loadave names we're watching. - 1.3.6.1.4.1.2021.10.1.2
+    indexes:
+    - labelname: laIndex
+      type: gauge
+  - name: laLoad
+    oid: 1.3.6.1.4.1.2021.10.1.3
+    type: DisplayString
+    help: The 1,5 and 15 minute load averages (one per row). - 1.3.6.1.4.1.2021.10.1.3
+    indexes:
+    - labelname: laIndex
+      type: gauge
+  - name: laConfig
+    oid: 1.3.6.1.4.1.2021.10.1.4
+    type: DisplayString
+    help: The watch point for load-averages to signal an error - 1.3.6.1.4.1.2021.10.1.4
+    indexes:
+    - labelname: laIndex
+      type: gauge
+  - name: laLoadInt
+    oid: 1.3.6.1.4.1.2021.10.1.5
+    type: gauge
+    help: The 1,5 and 15 minute load averages as an integer - 1.3.6.1.4.1.2021.10.1.5
+    indexes:
+    - labelname: laIndex
+      type: gauge
+  - name: laLoadFloat
+    oid: 1.3.6.1.4.1.2021.10.1.6
+    type: Float
+    help: The 1,5 and 15 minute load averages as an opaquely wrapped floating point
+      number. - 1.3.6.1.4.1.2021.10.1.6
+    indexes:
+    - labelname: laIndex
+      type: gauge
+  - name: laErrorFlag
+    oid: 1.3.6.1.4.1.2021.10.1.100
+    type: gauge
+    help: A Error flag to indicate the load-average has crossed its threshold value
+      defined in the snmpd.conf file - 1.3.6.1.4.1.2021.10.1.100
+    indexes:
+    - labelname: laIndex
+      type: gauge
+  - name: laErrMessage
+    oid: 1.3.6.1.4.1.2021.10.1.101
+    type: DisplayString
+    help: An error message describing the load-average and its surpased watch-point
+      value. - 1.3.6.1.4.1.2021.10.1.101
+    indexes:
+    - labelname: laIndex
+      type: gauge
+  - name: ssIndex
+    oid: 1.3.6.1.4.1.2021.11.1
+    type: gauge
+    help: Bogus Index - 1.3.6.1.4.1.2021.11.1
+  - name: ssErrorName
+    oid: 1.3.6.1.4.1.2021.11.2
+    type: DisplayString
+    help: Bogus Name - 1.3.6.1.4.1.2021.11.2
+  - name: ssSwapIn
+    oid: 1.3.6.1.4.1.2021.11.3
+    type: gauge
+    help: The average amount of memory swapped in from disk, calculated over the last
+      minute. - 1.3.6.1.4.1.2021.11.3
+  - name: ssSwapOut
+    oid: 1.3.6.1.4.1.2021.11.4
+    type: gauge
+    help: The average amount of memory swapped out to disk, calculated over the last
+      minute. - 1.3.6.1.4.1.2021.11.4
+  - name: ssIOSent
+    oid: 1.3.6.1.4.1.2021.11.5
+    type: gauge
+    help: The average amount of data written to disk or other block device, calculated
+      over the last minute - 1.3.6.1.4.1.2021.11.5
+  - name: ssIOReceive
+    oid: 1.3.6.1.4.1.2021.11.6
+    type: gauge
+    help: The average amount of data read from disk or other block device, calculated
+      over the last minute - 1.3.6.1.4.1.2021.11.6
+  - name: ssSysInterrupts
+    oid: 1.3.6.1.4.1.2021.11.7
+    type: gauge
+    help: The average rate of interrupts processed (including the clock) calculated
+      over the last minute - 1.3.6.1.4.1.2021.11.7
+  - name: ssSysContext
+    oid: 1.3.6.1.4.1.2021.11.8
+    type: gauge
+    help: The average rate of context switches, calculated over the last minute -
+      1.3.6.1.4.1.2021.11.8
+  - name: ssCpuUser
+    oid: 1.3.6.1.4.1.2021.11.9
+    type: gauge
+    help: The percentage of CPU time spent processing user-level code, calculated
+      over the last minute - 1.3.6.1.4.1.2021.11.9
+  - name: ssCpuSystem
+    oid: 1.3.6.1.4.1.2021.11.10
+    type: gauge
+    help: The percentage of CPU time spent processing system-level code, calculated
+      over the last minute - 1.3.6.1.4.1.2021.11.10
+  - name: ssCpuIdle
+    oid: 1.3.6.1.4.1.2021.11.11
+    type: gauge
+    help: The percentage of processor time spent idle, calculated over the last minute
+      - 1.3.6.1.4.1.2021.11.11
+  - name: ssCpuRawUser
+    oid: 1.3.6.1.4.1.2021.11.50
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent processing user-level code
+      - 1.3.6.1.4.1.2021.11.50
+  - name: ssCpuRawNice
+    oid: 1.3.6.1.4.1.2021.11.51
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent processing reduced-priority
+      code - 1.3.6.1.4.1.2021.11.51
+  - name: ssCpuRawSystem
+    oid: 1.3.6.1.4.1.2021.11.52
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent processing system-level code
+      - 1.3.6.1.4.1.2021.11.52
+  - name: ssCpuRawIdle
+    oid: 1.3.6.1.4.1.2021.11.53
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent idle - 1.3.6.1.4.1.2021.11.53
+  - name: ssCpuRawWait
+    oid: 1.3.6.1.4.1.2021.11.54
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent waiting for IO - 1.3.6.1.4.1.2021.11.54
+  - name: ssCpuRawKernel
+    oid: 1.3.6.1.4.1.2021.11.55
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent processing kernel-level code
+      - 1.3.6.1.4.1.2021.11.55
+  - name: ssCpuRawInterrupt
+    oid: 1.3.6.1.4.1.2021.11.56
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent processing hardware interrupts
+      - 1.3.6.1.4.1.2021.11.56
+  - name: ssIORawSent
+    oid: 1.3.6.1.4.1.2021.11.57
+    type: counter
+    help: Number of blocks sent to a block device - 1.3.6.1.4.1.2021.11.57
+  - name: ssIORawReceived
+    oid: 1.3.6.1.4.1.2021.11.58
+    type: counter
+    help: Number of blocks received from a block device - 1.3.6.1.4.1.2021.11.58
+  - name: ssRawInterrupts
+    oid: 1.3.6.1.4.1.2021.11.59
+    type: counter
+    help: Number of interrupts processed - 1.3.6.1.4.1.2021.11.59
+  - name: ssRawContexts
+    oid: 1.3.6.1.4.1.2021.11.60
+    type: counter
+    help: Number of context switches - 1.3.6.1.4.1.2021.11.60
+  - name: ssCpuRawSoftIRQ
+    oid: 1.3.6.1.4.1.2021.11.61
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent processing software interrupts
+      - 1.3.6.1.4.1.2021.11.61
+  - name: ssRawSwapIn
+    oid: 1.3.6.1.4.1.2021.11.62
+    type: counter
+    help: Number of blocks swapped in - 1.3.6.1.4.1.2021.11.62
+  - name: ssRawSwapOut
+    oid: 1.3.6.1.4.1.2021.11.63
+    type: counter
+    help: Number of blocks swapped out - 1.3.6.1.4.1.2021.11.63
+  - name: ssCpuRawSteal
+    oid: 1.3.6.1.4.1.2021.11.64
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent by the hypervisor code to
+      run other VMs even though the CPU in the current VM had something runnable -
+      1.3.6.1.4.1.2021.11.64
+  - name: ssCpuRawGuest
+    oid: 1.3.6.1.4.1.2021.11.65
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent by the CPU to run a virtual
+      CPU (guest) - 1.3.6.1.4.1.2021.11.65
+  - name: ssCpuRawGuestNice
+    oid: 1.3.6.1.4.1.2021.11.66
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent by the CPU to run a niced
+      virtual CPU (guest) - 1.3.6.1.4.1.2021.11.66
+  - name: ssCpuNumCpus
+    oid: 1.3.6.1.4.1.2021.11.67
+    type: gauge
+    help: The number of processors, as counted by the agent - 1.3.6.1.4.1.2021.11.67
+  - name: diskIOIndex
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.1
+    type: gauge
+    help: Reference index for each observed device. - 1.3.6.1.4.1.2021.13.15.1.1.1
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: diskIODevice
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.2
+    type: DisplayString
+    help: The name of the device we are counting/checking. - 1.3.6.1.4.1.2021.13.15.1.1.2
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: diskIONRead
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.3
+    type: counter
+    help: The number of bytes read from this device since boot. - 1.3.6.1.4.1.2021.13.15.1.1.3
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: diskIONWritten
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.4
+    type: counter
+    help: The number of bytes written to this device since boot. - 1.3.6.1.4.1.2021.13.15.1.1.4
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: diskIOReads
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.5
+    type: counter
+    help: The number of read accesses from this device since boot. - 1.3.6.1.4.1.2021.13.15.1.1.5
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: diskIOWrites
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.6
+    type: counter
+    help: The number of write accesses to this device since boot. - 1.3.6.1.4.1.2021.13.15.1.1.6
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: diskIOLA1
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.9
+    type: gauge
+    help: The 1 minute average load of disk (%) - 1.3.6.1.4.1.2021.13.15.1.1.9
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: diskIOLA5
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.10
+    type: gauge
+    help: The 5 minute average load of disk (%) - 1.3.6.1.4.1.2021.13.15.1.1.10
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: diskIOLA15
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.11
+    type: gauge
+    help: The 15 minute average load of disk (%) - 1.3.6.1.4.1.2021.13.15.1.1.11
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: diskIONReadX
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.12
+    type: counter
+    help: The number of bytes read from this device since boot. - 1.3.6.1.4.1.2021.13.15.1.1.12
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: diskIONWrittenX
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.13
+    type: counter
+    help: The number of bytes written to this device since boot. - 1.3.6.1.4.1.2021.13.15.1.1.13
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: memIndex
+    oid: 1.3.6.1.4.1.2021.4.1
+    type: gauge
+    help: Bogus Index - 1.3.6.1.4.1.2021.4.1
+  - name: memErrorName
+    oid: 1.3.6.1.4.1.2021.4.2
+    type: DisplayString
+    help: Bogus Name - 1.3.6.1.4.1.2021.4.2
+  - name: memTotalSwap
+    oid: 1.3.6.1.4.1.2021.4.3
+    type: gauge
+    help: The total amount of swap space configured for this host. - 1.3.6.1.4.1.2021.4.3
+  - name: memAvailSwap
+    oid: 1.3.6.1.4.1.2021.4.4
+    type: gauge
+    help: The amount of swap space currently unused or available. - 1.3.6.1.4.1.2021.4.4
+  - name: memTotalReal
+    oid: 1.3.6.1.4.1.2021.4.5
+    type: gauge
+    help: The total amount of real/physical memory installed on this host. - 1.3.6.1.4.1.2021.4.5
+  - name: memAvailReal
+    oid: 1.3.6.1.4.1.2021.4.6
+    type: gauge
+    help: The amount of real/physical memory currently unused or available. - 1.3.6.1.4.1.2021.4.6
+  - name: memTotalSwapTXT
+    oid: 1.3.6.1.4.1.2021.4.7
+    type: gauge
+    help: The total amount of swap space or virtual memory allocated for text pages
+      on this host - 1.3.6.1.4.1.2021.4.7
+  - name: memAvailSwapTXT
+    oid: 1.3.6.1.4.1.2021.4.8
+    type: gauge
+    help: The amount of swap space or virtual memory currently being used by text
+      pages on this host - 1.3.6.1.4.1.2021.4.8
+  - name: memTotalRealTXT
+    oid: 1.3.6.1.4.1.2021.4.9
+    type: gauge
+    help: The total amount of real/physical memory allocated for text pages on this
+      host - 1.3.6.1.4.1.2021.4.9
+  - name: memAvailRealTXT
+    oid: 1.3.6.1.4.1.2021.4.10
+    type: gauge
+    help: The amount of real/physical memory currently being used by text pages on
+      this host - 1.3.6.1.4.1.2021.4.10
+  - name: memTotalFree
+    oid: 1.3.6.1.4.1.2021.4.11
+    type: gauge
+    help: The total amount of memory free or available for use on this host - 1.3.6.1.4.1.2021.4.11
+  - name: memMinimumSwap
+    oid: 1.3.6.1.4.1.2021.4.12
+    type: gauge
+    help: The minimum amount of swap space expected to be kept free or available during
+      normal operation of this host - 1.3.6.1.4.1.2021.4.12
+  - name: memShared
+    oid: 1.3.6.1.4.1.2021.4.13
+    type: gauge
+    help: The total amount of real or virtual memory currently allocated for use as
+      shared memory - 1.3.6.1.4.1.2021.4.13
+  - name: memBuffer
+    oid: 1.3.6.1.4.1.2021.4.14
+    type: gauge
+    help: The total amount of real or virtual memory currently allocated for use as
+      memory buffers - 1.3.6.1.4.1.2021.4.14
+  - name: memCached
+    oid: 1.3.6.1.4.1.2021.4.15
+    type: gauge
+    help: The total amount of real or virtual memory currently allocated for use as
+      cached memory - 1.3.6.1.4.1.2021.4.15
+  - name: memUsedSwapTXT
+    oid: 1.3.6.1.4.1.2021.4.16
+    type: gauge
+    help: The amount of swap space or virtual memory currently being used by text
+      pages on this host - 1.3.6.1.4.1.2021.4.16
+  - name: memUsedRealTXT
+    oid: 1.3.6.1.4.1.2021.4.17
+    type: gauge
+    help: The amount of real/physical memory currently being used by text pages on
+      this host - 1.3.6.1.4.1.2021.4.17
+  - name: memSwapError
+    oid: 1.3.6.1.4.1.2021.4.100
+    type: gauge
+    help: Indicates whether the amount of available swap space (as reported by 'memAvailSwap(4)'),
+      is less than the desired minimum (specified by 'memMinimumSwap(12)'). - 1.3.6.1.4.1.2021.4.100
+  - name: memSwapErrorMsg
+    oid: 1.3.6.1.4.1.2021.4.101
+    type: DisplayString
+    help: Describes whether the amount of available swap space (as reported by 'memAvailSwap(4)'),
+      is less than the desired minimum (specified by 'memMinimumSwap(12)'). - 1.3.6.1.4.1.2021.4.101
