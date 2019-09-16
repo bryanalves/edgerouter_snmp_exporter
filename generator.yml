@@ -1,4 +1,16 @@
 modules:
+  cisco:
+    walk:
+      - sysUpTime
+      - interfaces
+      - ip
+      - icmp
+      - udp
+      - ifMIB
+      - etherMIB
+      - tcpMIB
+      - udpMIB
+
   ubiquiti_edgemax:
     walk:
       - hrSystemUptime
