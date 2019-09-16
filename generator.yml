@@ -35,14 +35,18 @@ modules:
       - systemStats
 
     lookups:
-      - old_index: ifIndex
-        new_index: ifAlias
+      - source_indexes: [ifIndex]
+        lookup: ifAlias
+        drop_source_indexes: true
 
-      - old_index: ipIfStatsIfIndex
-        new_index: ifAlias
+      - source_indexes: [ipIfStatsIfIndex]
+        lookup: ifAlias
+        drop_source_indexes: true
 
-      - old_index: hrStorageIndex
-        new_index: hrStorageDescr
+      - source_indexes: [hrStorageIndex]
+        lookup: hrStorageDescr
+        drop_source_indexes: true
 
-      - old_index: laIndex
-        new_index: laNames
+      - source_indexes: [laIndex]
+        lookup: laNames
+        drop_source_indexes: true
